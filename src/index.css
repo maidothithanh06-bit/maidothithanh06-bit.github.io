@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-pithy-black: #0B0B0D;
+    --color-pithy-white: #F7F7F5;
+    --color-pithy-volt: #C6FF3D;
+    --color-pithy-charcoal: #25262A;
+    --color-pithy-gray: #858585;
+    --font-heading: 'Anton', 'Space Grotesk', sans-serif;
+    --font-mono-num: 'Space Grotesk', monospace;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #0B0B0D;
+    color: #F7F7F5;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-heading {
+  font-family: 'Anton', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #25262A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6FF3D;
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle glow for volt accents */
+.glow-volt {
+  box-shadow: 0 0 25px rgba(198, 255, 61, 0.35);
+}
+
+.glow-volt-sm {
+  box-shadow: 0 0 12px rgba(198, 255, 61, 0.25);
+}
+
+.glow-volt-hover:hover {
+  box-shadow: 0 0 30px rgba(198, 255, 61, 0.5);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(18, 18, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Print styles for academic submission */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, footer, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-panel, .glass-panel-light {
+    border: 1px solid #ccc !important;
+    background: white !important;
+    color: black !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PITHY | The Art of Movement - Giày Thể Thao Cao Cấp",
+  "description": "Website thương mại điện tử giày thể thao PITHY - Cầu lông, Tennis, Chạy bộ với quy trình đặt hàng chuẩn hoá và tích hợp Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
